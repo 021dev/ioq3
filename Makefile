@@ -1071,7 +1071,8 @@ ifeq ($(PLATFORM),emscripten)
   BUILD_SERVER=0
 
   CLIENT_CFLAGS+=-s USE_SDL=2
-
+  # CLIENT_CFLAGS+=-s SOCKET_WEBRTC=1
+  
   CLIENT_LDFLAGS+=-s TOTAL_MEMORY=256MB
   CLIENT_LDFLAGS+=-s STACK_SIZE=5MB
   CLIENT_LDFLAGS+=-s MIN_WEBGL_VERSION=1 -s MAX_WEBGL_VERSION=2
@@ -1082,6 +1083,10 @@ ifeq ($(PLATFORM),emscripten)
   CLIENT_LDFLAGS+=-s EXPORT_ES6
   CLIENT_LDFLAGS+=-s EXPORT_NAME=ioquake3
 
+  CLIENT_LDFLAGS+=-lwebsocket.js
+  CLIENT_LDFLAGS+=-s WEBSOCKET_URL=ws://master.quakejs.com:27950
+  CLIENT_LDFLAGS+=-s WEBSOCKET_SUBPROTOCOL=binary
+  
   # Game data files can be packaged by emcc into a .data file that lives next to the wasm bundle
   # and added to the virtual filesystem before the game starts. This requires the game data to be
   # present at build time and it can't be changed afterward.
