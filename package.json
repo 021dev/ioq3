@@ -4,9 +4,9 @@
   "scripts": {
     "setup": "echo \"cd ../../emsdk/ && source emsdk_env.sh && cd -\"",
     "build": "emmake make",
-    "copy-pak": "cp ../q3-server/baseq3/* build/release-emscripten-wasm32/baseq3/",
     "build:debug": "emmake make debug",
     "clean": "rm -rf build/release-emscripten-wasm32; rm -rf build/debug-emscripten-wasm32; yarn copy-pak",
+    "copy-pak": "mkdir -p build/release-emscripten-wasm32/baseq3/; mkdir -p build/debug-emscripten-wasm32/baseq3/; cp ../q3-server/baseq3/* build/release-emscripten-wasm32/baseq3/; cp ../q3-server/baseq3/* build/debug-emscripten-wasm32/baseq3/",
     "commit": "gitmoji -c",
     "context": "./scripts/context.sh -o contexts/ioq3.txt --strip-comments -r -e h -e c code/client/cl_main.c code/client/client.h code/qcommon/qcommon.h code/qcommon/net_chan.c code/qcommon/net_ip.c code/qcommon/net_ws.c"
   }
