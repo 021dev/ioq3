@@ -8,6 +8,6 @@
     "build:debug": "emmake make debug",
     "clean": "rm -rf build/release-emscripten-wasm32; rm -rf build/debug-emscripten-wasm32; yarn copy-pak",
     "commit": "gitmoji -c",
-    "context": "./scripts/context.sh -o contexts/ioq3.txt --strip-comments -r -e h -e c code/client/cl_main.c code/qcommon/net_ip.c code/qcommon/net_ws.c"
+    "context": "./scripts/context.sh -o contexts/ioq3.txt --strip-comments -r -e h -e c code/client/cl_main.c code/client/client.h code/qcommon/qcommon.h code/qcommon/net_chan.c code/qcommon/net_ip.c code/qcommon/net_ws.c"
   }
 }
