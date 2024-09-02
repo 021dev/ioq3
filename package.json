@@ -6,6 +6,7 @@
     "build": "emmake make",
     "copy-pak": "cp ../q3-server/baseq3/* build/release-emscripten-wasm32/baseq3/",
     "build:debug": "emmake make debug",
+    "clean": "rm -rf build/release-emscripten-wasm32; rm -rf build/debug-emscripten-wasm32; yarn copy-pak",
     "commit": "gitmoji -c",
     "context": "./scripts/context.sh -o contexts/ioq3.txt --strip-comments -r -e h -e c code/client/cl_main.c code/qcommon/net_ip.c code/qcommon/net_ws.c"
   }
