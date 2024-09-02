@@ -4,6 +4,8 @@
   "scripts": {
     "setup": "echo \"cd ../../emsdk/ && source emsdk_env.sh && cd -\"",
     "build": "emmake make",
-    "commit": "gitmoji -c"
+    "copy-pak": "cp ../q3-server/baseq3/* build/release-emscripten-wasm32/baseq3/",
+    "commit": "gitmoji -c",
+    "context": "./scripts/context.sh -o contexts/ioq3.txt --strip-comments -r -e h -e c code/client/cl_main.c code/qcommon/net_ip.c code/qcommon/net_ws.c"
   }
 }
