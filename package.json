@@ -6,7 +6,8 @@
     "build": "emmake make",
     "build:debug": "emmake make debug",
     "clean": "rm -rf build/release-emscripten-wasm32; rm -rf build/debug-emscripten-wasm32; yarn copy-pak",
-    "copy-pak": "mkdir -p build/release-emscripten-wasm32/baseq3/; mkdir -p build/debug-emscripten-wasm32/baseq3/; cp ../q3-server/baseq3/* build/release-emscripten-wasm32/baseq3/; cp ../q3-server/baseq3/* build/debug-emscripten-wasm32/baseq3/",
+    "copy-pak": "mkdir -p build/release-emscripten-wasm32/baseq3/; mkdir -p build/debug-emscripten-wasm32/baseq3/; cp ../q3-server/baseq3/* build/release-emscripten-wasm32/baseq3/; cp ../q3-server/baseq3/* build/debug-emscripten-wasm32/baseq3/; cp ../q3-server/baseq3/* build/release-darwin-arm64/baseq3/",
+    "copy-pak:point-release": "mkdir -p build/release-emscripten-wasm32/baseq3/; mkdir -p build/debug-emscripten-wasm32/baseq3/; cp ../paks/Point-Release-1.32-PAK/* build/release-emscripten-wasm32/baseq3/; cp ../paks/Point-Release-1.32-PAK/* build/debug-emscripten-wasm32/baseq3/",
     "commit": "gitmoji -c",
     "context": "./scripts/context.sh -o contexts/ioq3.txt --strip-comments -r -e h -e c code/client/cl_main.c code/client/client.h code/qcommon/qcommon.h code/qcommon/net_chan.c code/qcommon/net_ip.c code/qcommon/net_ws.c"
   }
