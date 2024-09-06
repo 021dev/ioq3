@@ -576,6 +576,7 @@ void CM_LoadMap( const char *name, qboolean clientload, int *checksum ) {
 	int				length;
 	static unsigned	last_checksum;
 
+	Com_Printf("CM_LoadMap %s, client: %s, checksum: %d\n", name, clientload ? "true": "false", *checksum);
 	if ( !name || !name[0] ) {
 		Com_Error( ERR_DROP, "CM_LoadMap: NULL name" );
 	}
@@ -609,7 +610,10 @@ void CM_LoadMap( const char *name, qboolean clientload, int *checksum ) {
 	// load the file
 	//
 #ifndef BSPC
+	Com_Printf("FS_ReadFile %s\n", name);
+
 	length = FS_ReadFile( name, &buf.v );
+	Com_Printf("length %d\n", length);
 #else
 	length = LoadQuakeFile((quakefile_t *) name, &buf.v);
 #endif
