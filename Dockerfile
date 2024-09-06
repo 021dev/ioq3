@@ -25,6 +25,10 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/locale/* /var/cache/debconf/*-old /usr/share/doc/*
 
+# Install Websocat
+RUN curl -L https://github.com/vi/websocat/releases/download/v1.11.0/websocat.x86_64-unknown-linux-musl -o /usr/local/bin/websocat \
+    && chmod +x /usr/local/bin/websocat
+
 WORKDIR /quake3
 
 # Copy all necessary files from the builder stage, accounting for different architectures
