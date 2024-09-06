@@ -1084,7 +1084,7 @@ ifeq ($(PLATFORM),emscripten)
   CLIENT_LDFLAGS+=-s EXPORT_NAME=ioquake3
 
   CLIENT_LDFLAGS+=-lwebsocket.js
-  CLIENT_LDFLAGS+=-s WEBSOCKET_URL=ws://master.quakejs.com:27950
+  CLIENT_LDFLAGS+=-s WEBSOCKET_URL=ws://localhost:27950
   CLIENT_LDFLAGS+=-s WEBSOCKET_SUBPROTOCOL=binary
   
   # Game data files can be packaged by emcc into a .data file that lives next to the wasm bundle
