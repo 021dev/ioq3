@@ -21,7 +21,7 @@ RUN mkdir -p /quake3/baseq3 && \
 FROM ubuntu:latest
 
 RUN apt-get update && \
-    apt-get install -y libsdl2-2.0-0 && \
+    apt-get install -y curl libsdl2-2.0-0 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/locale/* /var/cache/debconf/*-old /usr/share/doc/*
 
